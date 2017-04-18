@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 
 const Dimensions = require('Dimensions');
+const BeautyData = require('./data/cell.json');
 
 let {
   width
@@ -32,25 +33,23 @@ export default class AwesomeProject extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.beautyContainer}>
-          <Image source={require('./imgs/cell_1.jpg')} style={styles.img}/>
-          <Text style={styles.text}>包包</Text>
-        </View>
-
-        <View style={styles.beautyContainer}>
-          <Image source={require('./imgs/cell_1.jpg')} style={styles.img}/>
-          <Text style={styles.text}>包包</Text>
-        </View>
-        <View style={styles.beautyContainer}>
-          <Image source={require('./imgs/cell_1.jpg')} style={styles.img}/>
-          <Text style={styles.text}>包包</Text>
-        </View>
-        <View style={styles.beautyContainer}>
-          <Image source={require('./imgs/cell_1.jpg')} style={styles.img}/>
-          <Text style={styles.text}>包包</Text>
-        </View>
+        {this.renderBeauty()}
       </View>
     );
+  }
+  renderBeauty() {
+    var allBeauty = [];
+    for (let i = 0; i < BeautyData.data.length; i++) {
+      let Beauty = BeautyData.data[i];
+      let IconPath = './imgs/' + Beauty.icon;
+      allBeauty.push(
+        <View key={i} style={styles.beautyContainer}>
+          <Image source={{uri:'./cell_1'}} style={styles.img}/>
+          <Text style={styles.text}>{Beauty.name}</Text>
+        </View>
+      );
+    }
+    return allBeauty;
   }
 }
 
