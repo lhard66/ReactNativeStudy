@@ -1,1 +1,21 @@
-{"data":[{"name":"美景1","icon":"cell_1.jpg"},{"name":"美景2","icon":"cell_2.jpg"},{"name":"美景3","icon":"cell_3.jpg"},{"name":"美景4","icon":"cell_4.jpg"},{"name":"美景5","icon":"cell_5.jpg"},{"name":"美景6","icon":"cell_6.jpg"},{"name":"美景7","icon":"cell_7.jpg"},{"name":"美景8","icon":"cell_8.jpg"},{"name":"美景9","icon":"cell_9.jpg"}]}
+{
+	"data": [{
+		"name": "美景1",
+		"icon": "cell_1"
+	}, {
+		"name": "美景2",
+		"icon": "cell_2"
+	}, {
+		"name": "美景3",
+		"icon": "cell_3"
+	}, {
+		"name": "美景4",
+		"icon": "cell_4"
+	}, {
+		"name": "美景5",
+		"icon": "cell_5"
+	}, {
+		"name": "美景6",
+		"icon": "cell_6"
+	}]
+}

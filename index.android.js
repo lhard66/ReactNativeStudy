@@ -41,10 +41,11 @@ export default class AwesomeProject extends Component {
     var allBeauty = [];
     for (let i = 0; i < BeautyData.data.length; i++) {
       let Beauty = BeautyData.data[i];
-      let IconPath = './imgs/' + Beauty.icon;
       allBeauty.push(
         <View key={i} style={styles.beautyContainer}>
-          <Image source={{uri:'./cell_1'}} style={styles.img}/>
+      { /*目前版本："react-native": "0.43.2"。在应用中添加图片，需要重启安卓，重新打包。只有在drawable中的图片才可以被识别，在目前版本中。*/ }
+          <Image source={{uri:Beauty.icon}} style={styles.img}/>
+          {/*<Image source={{uri:'http://www.baidu.com/img/bd_logo1.png'}} style={styles.img}/>*/}
           <Text style={styles.text}>{Beauty.name}</Text>
         </View>
       );
