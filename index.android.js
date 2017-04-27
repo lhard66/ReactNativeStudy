@@ -11,14 +11,18 @@ import {
   AppRegistry,
 } from 'react-native';
 
-var BeautyView = require('./beautyView');
+let BeautyView = require('./beautyView');
+let LoginView = require('./loginView');
+
 
 export default class AwesomeProject extends Component {
   render() {
     return (
-      <BeautyView/>
+      <LoginView/>
     );
   }
 }
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+
+{ /*可选模块*/ } { /*<BeautyView>*/ }
