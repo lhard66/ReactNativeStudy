@@ -13,16 +13,19 @@ import {
 
 let BeautyView = require('./beautyView');
 let LoginView = require('./loginView');
+let FlexDimensionsBasics=require('./flexView1.js');
 
 
 export default class AwesomeProject extends Component {
   render() {
     return (
-      <LoginView/>
+      <FlexDimensionsBasics/>
     );
   }
 }
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
-{ /*可选模块*/ } { /*<BeautyView>*/ }
+{ /*可选模块*/ } 
+{ /*<BeautyView>*/ }
+{/*<LoginView/>*/}

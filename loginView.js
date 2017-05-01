@@ -20,7 +20,7 @@ class LoginView extends Component {
 			<View style={styles.loginContainerStyle}>
 				<Image source={require('./imgs/header.png')} style={styles.headerStyle} />
 				<TextInput placeholder={'请输入用户名'} style={styles.textInputStyle} />
-				<TextInput placeholder={'请输入密码'} style={styles.textInputStyle} password={true} />				
+				<TextInput placeholder={'请输入密码'} style={styles.textInputStyle} secureTextEntry ={true} />				
 				<View style={styles.loginBtnStyle}>
 					<Text>登录</Text>
 				</View>
