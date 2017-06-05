@@ -18,14 +18,14 @@ const {
 class SwiperView extends Component {
 	//变量state初始化
 	constructor(props) {
-		super(props);
-		this.state = {
-			currentPage: 0
-		};
-	}
-	//常量props初始化
+			super(props);
+			this.state = {
+				currentPage: 0
+			};
+		}
+		//常量props初始化
 	static defaultProps = {
-		duration: 5000
+		duration: 3000
 	}
 
 	render() {
@@ -39,6 +39,9 @@ class SwiperView extends Component {
 					>						
 						{this.renderAllImage()}
 					</ScrollView> 
+					<View style={styles.pageIndicator}>
+						{this.renderPageCircle()}
+					</View>
 				</View>
 		);
 	}
@@ -53,11 +56,26 @@ class SwiperView extends Component {
 		}
 		return images;
 	}
-	//应用加载完成调用
+	renderPageCircle() {
+			var indicatorArr = [];
+			var indicatorStyle;
+			for (let i = 0; i < imageData.data.length; i++) {
+				indicatorStyle = (i == this.state.currentPage) ? {
+					color: 'orange'
+				} : {
+					color: '#fff'
+				};
+				indicatorArr.push(
+					<Text style={[{fontSize:25},indicatorStyle]}>&bull;</Text>
+				);
+			}
+			return indicatorArr;
+		}
+		//应用加载完成调用
 	componentDidMount() {
-		this.startTimer();
-	}
-	//对时间组件做防异常处理
+			this.startTimer();
+		}
+		//对时间组件做防异常处理
 	componentWillUnmount() {
 		this.timer && clearTimeout(this.timer);
 	}
@@ -68,7 +86,7 @@ class SwiperView extends Component {
 		this.timer = setInterval(() => {
 			let activePage = 0;
 			//state变量调用方式
-			console.log(this.state.currentPage);					
+			console.log(this.state.currentPage);
 			if ((this.state.currentPage + 1) >= imgCount) {
 				activePage = 0;
 			} else {
@@ -97,6 +115,17 @@ const styles = StyleSheet.create({
 	imgItem: {
 		width: width,
 		height: 160,
+	},
+	pageIndicator: {
+		width: width,
+		height: 25,
+		backgroundColor: 'rgba(0,0,0,0.4)',
+		flexDirection: 'row',
+		alignItems: 'center',
+		position: 'absolute',
+		bottom: 0,
+		justifyContent:'flex-end',
+		paddingRight:6,
 	}
 });
 
