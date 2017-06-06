@@ -112,6 +112,7 @@ class SwiperView extends Component {
 	//开始拖拽停止计时，停止拖拽开始计时。
 	onScrollBeginDrag(){
 		//这里的this指向ScrollView，而非SwiperView类。故this.timer数据为undifine.
+		//ScrollView拖拽时会自动停止计时，文章地址：http://blog.csdn.net/real_bird/article/details/55657548
 		// clearInterval(this.timer);
 		console.log('开始拖动');
 	}
