@@ -20,8 +20,8 @@ class SwiperView extends Component {
 	constructor(props) {
 			super(props);
 			this.state = {
-				currentPage: 0
-			};
+				currentPage: 0,				
+			};			
 		}
 		//常量props初始化
 	static defaultProps = {
@@ -35,7 +35,9 @@ class SwiperView extends Component {
 						ref="scrollView"
 						horizontal={true}
 						showsHorizontalScrollIndicator={false}
-						pagingEnabled={true}						
+						pagingEnabled={true}					
+						onScrollBeginDrag={this.onScrollBeginDrag}	
+						onScrollEndDrag={this.onScrollEndDrag}
 					>						
 						{this.renderAllImage()}
 					</ScrollView> 
@@ -66,7 +68,7 @@ class SwiperView extends Component {
 					color: '#fff'
 				};
 				indicatorArr.push(
-					<Text style={[{fontSize:25},indicatorStyle]}>&bull;</Text>
+					<Text key={i} style={[{fontSize:25},indicatorStyle]}>&bull;</Text>
 				);
 			}
 			return indicatorArr;
@@ -104,7 +106,17 @@ class SwiperView extends Component {
 				animated: true
 			});
 			//常量调用方式
-		}, this.props.duration);
+		}, this.props.duration);		
+		console.log(this);
+	}
+	//开始拖拽停止计时，停止拖拽开始计时。
+	onScrollBeginDrag(){
+		//这里的this指向ScrollView，而非SwiperView类。故this.timer数据为undifine.
+		// clearInterval(this.timer);
+		console.log('开始拖动');
+	}
+	onScrollEndDrag(){
+		console.log('停止拖动');
 	}
 };
 
