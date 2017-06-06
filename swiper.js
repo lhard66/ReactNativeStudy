@@ -123,7 +123,7 @@ class SwiperView extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		marginTop: 25
+		marginTop: 8,
 	},
 	imgItem: {
 		width: width,
