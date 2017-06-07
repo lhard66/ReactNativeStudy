@@ -15,12 +15,13 @@ let BeautyView = require('./beautyView');
 let LoginView = require('./loginView');
 let FlexDimensionsBasics=require('./flexView1.js');
 let SwiperView=require('./swiper.js');
+let Gongfu=require('./gongfu.js');
 
 
 export default class AwesomeProject extends Component {
   render() {
     return (
-      <SwiperView/>
+      <Gongfu/>
     );
   }
 }
