@@ -16,12 +16,12 @@ let LoginView = require('./loginView');
 let FlexDimensionsBasics=require('./flexView1.js');
 let SwiperView=require('./swiper.js');
 let Gongfu=require('./gongfu.js');
-
+let Share=require('./share');
 
 export default class AwesomeProject extends Component {
   render() {
     return (
-      <Gongfu/>
+      <Share/>
     );
   }
 }
