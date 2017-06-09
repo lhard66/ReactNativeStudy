@@ -29,6 +29,7 @@ export default class AwesomeProject extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 /*可选模块
+<Gongfu/>
 <SwiperView/>	轮播图
 <BeautyView/>	美丽风景墙
 <LoginView/>	QQ登陆
