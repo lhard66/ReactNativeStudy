@@ -21,7 +21,7 @@ let Share=require('./share');
 export default class AwesomeProject extends Component {
   render() {
     return (
-      <Share/>
+      <Gongfu/>
     );
   }
 }
@@ -29,6 +29,7 @@ export default class AwesomeProject extends Component {
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 /*可选模块
+<Share/>			分享九宫格布局
 <Gongfu/>			八段锦
 <SwiperView/>	轮播图
 <BeautyView/>	美丽风景墙

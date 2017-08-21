@@ -24,6 +24,7 @@ class Gongfu extends Component {
 			rowHasChanged: (r1, r2) => r1 !== r2
 		});
 		this.state = {
+			// 根据指定的dataBlob和 rowIdentities为ListViewDataSource复制填充数据。dataBlob即原始数据。需要在初始化时定义抽取函数（否则使用默认的抽取函数）。
 			dataSource: ds.cloneWithRows(gfData.data),
 		}
 	}
